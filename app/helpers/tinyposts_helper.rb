@@ -1,0 +1,2 @@
+module TinypostsHelper
+end

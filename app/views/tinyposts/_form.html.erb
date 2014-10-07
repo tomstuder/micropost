@@ -1,0 +1,25 @@
+<%= form_for(@tinypost) do |f| %>
+  <% if @tinypost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tinypost.errors.count, "error") %> prohibited this tinypost from being saved:</h2>
+
+      <ul>
+      <% @tinypost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
